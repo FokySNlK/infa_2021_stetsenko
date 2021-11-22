@@ -32,5 +32,12 @@ def x_9(): # нормализация вектора
     suma = math.sqrt(sum(i**2 for i in x_9))
     x_9 = np.array([i/suma for i in x_9]) # нормализация
     return x_9
-
-
+def x_10():
+    x = float(input())
+    x_10 = np.random.randint(-10, 9, 10)
+    z = min([abs(i - x) for i in x_10]) # 32  (8, 56)  24 -> 8
+    print(x_10)
+    if z + x in x_10: # [8, 56] x = 32 -> выводит 56
+        return z + x
+    else:
+        return x - z
