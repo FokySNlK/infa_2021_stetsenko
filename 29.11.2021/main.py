@@ -43,6 +43,20 @@ def solve_ex_2():
             color='k',
             linestyle=':')
     plt.show()
+
+def method():
+    x = np.arange(-2, 2, 0.01)
+    y = -x ** 2 + 4
+    N = 10000
+    n = 0
+    for i in range(N):
+        x1 = (random.random() - 0.5) * 4
+    y1 = random.random() * 4
+    plt.plot(x1, y1, 'g*')
+    if y1 <= -x1 ** 2 + 4:
+        n += 1
+    plt.plot(x, y, 'r')
+    plt.show()
 def solve_ex_3():
     x = np.arange(-10, 20, 0.01)
     y = []
@@ -84,4 +98,4 @@ def solve_ex_5():
     x_x, y_y = np.polyfit(x, y, deg = n - 1, cov=True)
     plt.plot(x_x, y_y)
     plt.show()
-solve_ex_5()
+method()
