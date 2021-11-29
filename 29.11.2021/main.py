@@ -57,7 +57,7 @@ def solve_ex_3():
              linestyle=':')
     plt.show()
 
-def solve_ex_4():
+def solve_ex_4_alternative():
     x = list(map(int, input().split()))
     plt.figure(num = 1, figsize=(6, 6))
     plt.title('Plot 3', size=14)
@@ -67,6 +67,21 @@ def solve_ex_4():
         plt.pie(x, labels=(z))
         plt.title('Не знаю что, не знаю где!')
     plt.show()
-
-
-solve_ex_4()
+def solve_ex_4():
+    eq = input()
+    x = np.arange(-20, 20, 0.01)
+    plt.plot(x, eval(eq))
+    plt.grid(True, linewidth = 1)
+    plt.minorticks_on()
+    plt.grid(which='minor',color='k',linestyle=':')
+    plt.show()
+def solve_ex_5():
+    polynom = list(map(int, input().split()))
+    n = len(polynom)
+    polynom = np.poly1d(polynom)
+    x = np.arange(-100, 100, 0.01)
+    y = np.array([polynom(i) for i in x])
+    x_x, y_y = np.polyfit(x, y, deg = n - 1, cov=True)
+    plt.plot(x_x, y_y)
+    plt.show()
+solve_ex_5()
